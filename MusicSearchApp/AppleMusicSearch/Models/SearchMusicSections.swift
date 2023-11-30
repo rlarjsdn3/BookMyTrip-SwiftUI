@@ -11,22 +11,27 @@ import RxDataSources
 import RxSwift
 
 // MARK: - SectionModel
-enum SectionOfMusic {
+enum SearchMusicSections {
+    case countSection([MusicItem])
     case musicSection([MusicItem])
 }
 
-extension SectionOfMusic: SectionModelType {
+extension SearchMusicSections: SectionModelType {
     typealias Item = MusicItem
     
     var items: [MusicItem] {
         switch self {
+        case let .countSection(count):
+            return count
         case let .musicSection(items):
             return items
         }
     }
     
-    init(original: SectionOfMusic, items: [MusicItem]) {
+    init(original: SearchMusicSections, items: [MusicItem]) {
         switch original {
+        case let .countSection(items):
+            self = .countSection(items)
         case let .musicSection(items):
             self = .musicSection(items)
         }
@@ -34,5 +39,6 @@ extension SectionOfMusic: SectionModelType {
 }
 
 enum MusicItem {
+    case countItem(count: Int)
     case musicItem(Music)
 }

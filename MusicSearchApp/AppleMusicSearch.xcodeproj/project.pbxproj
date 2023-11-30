@@ -30,7 +30,7 @@
 		9E28885D2B189AF90016CCF2 /* MusicAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E28885C2B189AF90016CCF2 /* MusicAPIService.swift */; };
 		9E28885F2B189B0A0016CCF2 /* ServiceProviderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E28885E2B189B0A0016CCF2 /* ServiceProviderType.swift */; };
 		9E2888612B189D530016CCF2 /* MusicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2888602B189D530016CCF2 /* MusicCollectionViewCell.swift */; };
-		9E2888632B18A07A0016CCF2 /* SectionOfMusic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2888622B18A07A0016CCF2 /* SectionOfMusic.swift */; };
+		9E2888632B18A07A0016CCF2 /* SearchMusicSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2888622B18A07A0016CCF2 /* SearchMusicSections.swift */; };
 		9E2888652B18B36D0016CCF2 /* MusicCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2888642B18B36D0016CCF2 /* MusicCellReactor.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +48,7 @@
 		9E28885C2B189AF90016CCF2 /* MusicAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicAPIService.swift; sourceTree = "<group>"; };
 		9E28885E2B189B0A0016CCF2 /* ServiceProviderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProviderType.swift; sourceTree = "<group>"; };
 		9E2888602B189D530016CCF2 /* MusicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCollectionViewCell.swift; sourceTree = "<group>"; };
-		9E2888622B18A07A0016CCF2 /* SectionOfMusic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionOfMusic.swift; sourceTree = "<group>"; };
+		9E2888622B18A07A0016CCF2 /* SearchMusicSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMusicSections.swift; sourceTree = "<group>"; };
 		9E2888642B18B36D0016CCF2 /* MusicCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCellReactor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,7 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				9E2888372B1897EC0016CCF2 /* QueryResult.swift */,
-				9E2888622B18A07A0016CCF2 /* SectionOfMusic.swift */,
+				9E2888622B18A07A0016CCF2 /* SearchMusicSections.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -246,7 +246,7 @@
 				9E2888222B1897B80016CCF2 /* SceneDelegate.swift in Sources */,
 				9E28885D2B189AF90016CCF2 /* MusicAPIService.swift in Sources */,
 				9E2888382B1897EC0016CCF2 /* QueryResult.swift in Sources */,
-				9E2888632B18A07A0016CCF2 /* SectionOfMusic.swift in Sources */,
+				9E2888632B18A07A0016CCF2 /* SearchMusicSections.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

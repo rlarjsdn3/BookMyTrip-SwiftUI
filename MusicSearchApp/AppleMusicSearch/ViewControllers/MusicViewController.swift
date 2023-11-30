@@ -26,10 +26,12 @@ class MusicViewController: UIViewController, ReactorKit.View {
     private lazy var compositionalLayout: UICollectionViewCompositionalLayout = {
         let layout = UICollectionViewCompositionalLayout { [weak self] index, _ in
             switch self?.dataSource.sectionModels[index] {
+            case .countSection:
+                return self?.createGridLayout()
             case .musicSection:
                 return self?.createGridLayout()
             case .none:
-                return nil
+                return self?.createGridLayout()
             }
         }
         return layout
@@ -41,7 +43,7 @@ class MusicViewController: UIViewController, ReactorKit.View {
     var disposeBag: DisposeBag = DisposeBag()
     let musicViewReactor: MusicViewReactor = MusicViewReactor()
     
-    var dataSource: RxCollectionViewSectionedReloadDataSource<SectionOfMusic>!
+    var dataSource: RxCollectionViewSectionedReloadDataSource<SearchMusicSections>!
     
     // MARK: - Lifecycles
     override func viewDidLoad() {
@@ -54,9 +56,9 @@ class MusicViewController: UIViewController, ReactorKit.View {
         
         bind(reactor: musicViewReactor)
     }
-
+    
     // MARK: - Helpers
-    func bind(reactor: MusicViewReactor) { 
+    func bind(reactor: MusicViewReactor) {
         // Action
         searchController.searchBar.rx.text
             .orEmpty
@@ -71,7 +73,7 @@ class MusicViewController: UIViewController, ReactorKit.View {
             .bind(to: collectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
     }
-
+    
     func setupUI() {
         view.addSubview(collectionView)
     }
@@ -88,8 +90,12 @@ class MusicViewController: UIViewController, ReactorKit.View {
     }
     
     func prepareDatasource() {
-        dataSource = RxCollectionViewSectionedReloadDataSource<SectionOfMusic> { dataSource, collectionView, indexPath, item in
+        dataSource = RxCollectionViewSectionedReloadDataSource<SearchMusicSections> { dataSource, collectionView, indexPath, item in
             switch dataSource[indexPath] {
+            case let .countItem(count):
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "musicCell", for: indexPath) as! MusicCollectionViewCell
+                cell.reactor = MusicCellReactor(state: Music(artistName: "\(count)", albumName: "\(count)", songName: "\(count)", coverImageUrl: "\(count)"))
+                return cell
             case let .musicItem(item):
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "musicCell", for: indexPath) as! MusicCollectionViewCell
                 cell.reactor = MusicCellReactor(state: item)

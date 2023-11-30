@@ -18,12 +18,12 @@ final class MusicViewReactor: Reactor {
     
     // MARK: - Mutation
     enum Mutation {
-        case updateSearchResult([SectionOfMusic])
+        case updateSearchResult([SearchMusicSections], [SearchMusicSections])
     }
     
     // MARK: - State
-    struct State { 
-        var sectionedMusic: [SectionOfMusic]
+    struct State {
+        var sectionedMusic: [SearchMusicSections]
     }
     
     // MARK: - PROPERTIES
@@ -42,18 +42,24 @@ final class MusicViewReactor: Reactor {
         case let .didChangeText(query):
             return provider.musicAPIService.requestMusicSearch(query)
                 .map { items in
+                    let countItem = [MusicItem.countItem(count: items.resultCount)]
+                    let countSection = [SearchMusicSections.countSection(countItem)]
+                    
                     let musicItems = items.results.map { MusicItem.musicItem($0) }
-                    let sectionOfMusic = [SectionOfMusic.musicSection(musicItems)]
-                    return Mutation.updateSearchResult(sectionOfMusic)
+                    let musicSection = [SearchMusicSections.musicSection(musicItems)]
+                    
+                    return  Mutation.updateSearchResult(countSection, musicSection)
                 }
         }
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
         var newState = state
+        newState.sectionedMusic = []
         switch mutation {
-        case let .updateSearchResult(sectionOfMusic):
-            newState.sectionedMusic = sectionOfMusic
+        case let .updateSearchResult(sectionOfCount, sectionOfMusic):
+            newState.sectionedMusic.append(contentsOf: sectionOfCount)
+            newState.sectionedMusic.append(contentsOf: sectionOfMusic)
         }
         return newState
     }
