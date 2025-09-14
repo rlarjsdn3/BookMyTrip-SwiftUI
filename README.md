@@ -1,17 +1,7 @@
-<img src="https://user-images.githubusercontent.com/21079970/224588704-8340a864-0560-4f13-8586-eac4937dcfe5.png" align="center" width="150" height="150">
+# Book My Trip
 
-# 음악 검색 앱
-## 🍎Overview
-`프로젝트` 음악 검색 앱(with RxSwift) <br>
-`기술스택` <img src="https://img.shields.io/badge/Swift-F05138?style=flat-square&logo=Swift&logoColor=white"/> <img src="https://img.shields.io/badge/Xcode-147EFB?style=flat-square&logo=Xcode&logoColor=white"/> <br>
-`게시일자` 2023년 11월 30일(토) <br>
+## 🌠 Images
 
-## 🏙️Images
-
-| 이미지 |
-| :--: |
-| <img src="https://github.com/rlarjsdn3/music-search-rxswift-toy-project/assets/21079970/7d576cf4-cd96-4984-8a30-7de5522e179c" align="center" width="235" height="511"> |
- 
-## 👩🏻‍💻Reference
-
-* [음악 검색 앱](https://github.com/rlarjsdn3/music-search-uikit-toy-project)
+| 이미지 | 이미지 | 이미지 |
+| :--: | :--: | :--: |
+| <img width="1206" height="2622" alt="Simulator Screenshot - iPhone 16 Pro - 2025-09-14 at 11 23 03" src="https://github.com/user-attachments/assets/c4a0aca4-7639-4d5b-bc87-1393aef0d943" /> | <img width="1206" height="2622" alt="Simulator Screenshot - iPhone 16 Pro - 2025-09-14 at 11 23 14" src="https://github.com/user-attachments/assets/6824c106-ed2e-4072-9ef3-eb5208adccb1" /> | <img width="1206" height="2622" alt="Simulator Screenshot - iPhone 16 Pro - 2025-09-14 at 11 23 34" src="https://github.com/user-attachments/assets/b0f9da91-4a9b-4ea0-9184-f5a8beddf401" /> |
